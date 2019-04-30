@@ -99,3 +99,15 @@ console.log(this.state.ingredients)
     export default RecipeContent;
 
 //when they click on the button on the left in the list we get back an object, 
+
+//1 create a show component will show the recipe that is displayed in the main screen
+// the main component will receive props, they will be the title and the list of ingredients 
+
+//2 wire up the show recipe function to update state which will then be passed down into the show component 
+// two properties in state the show title and the show ingredients and these two values will be passed down as props to the show component. Whenever these update the show component will update 
+// so when you click the button on the left you should see in the middle the name of the recipe and the list of ingredients 
+
+//3 Analyze button and hook up the API 
+
+
+// the recipe lives on recipe.content so when you click on a new recipe the new one shows instead of the old one. 
