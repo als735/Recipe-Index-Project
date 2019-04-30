@@ -10,6 +10,8 @@ class App extends Component {
         console.log(res.data)
       })
   }
+
+
   render(){
     return (
       <div className="App">

@@ -1,0 +1,10 @@
+#analyze {
+    margin: 25px; 
+    color: black;
+    background: #0d8ee4;
+    border: none;
+    font-weight: bold;
+    position: relative;
+    width: 120px;
+    height: 28px;
+}
