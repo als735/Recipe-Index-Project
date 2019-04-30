@@ -1,9 +1,11 @@
 import React, { Component } from "react";
+import './AddIngredient.css'; 
+
 
 class AddIngredient extends Component {
-    constructor(props){
-        super(props); 
-    }
+    //constructor(props){
+    //     super(props); 
+    // }
     render() {
         
 // AddRecipe =(recipe) => {
@@ -27,7 +29,7 @@ class AddIngredient extends Component {
                         placeholder='Ingredients' 
                         value={this.props.state.ingredient} 
                         onChange={this.props.changeIngredient}/>
-                        <button onClick={this.props.click}>Add</button>
+                        <button id="add" onClick={this.props.click}>Add</button>
                     </section> 
                 </form>
             </div>

@@ -1,16 +1,18 @@
 import React, { Component } from "react";
+import './SubmitRecipe.css'; 
+
 
 class SubmitRecipe extends Component {
-    constructor(props){
-        super(props); 
-    }
+    // constructor(props){
+    //     super(props); 
+    // }
     render() {
         
 
     console.log(this.props) 
 
         return (
-            <div>
+            <div >
                 <form onSubmit={this.handleSubmit}>
                     <section id='inputBox'>
                     <input 
@@ -20,7 +22,7 @@ class SubmitRecipe extends Component {
                         value={this.props.state.title} 
                         onChange={this.props.changeTitle} />
 
-                        <button onClick={this.props.click}>Submit</button>
+                        <button id="submit" onClick={this.props.click}>Submit</button>
                     </section> 
                 </form>
             </div>

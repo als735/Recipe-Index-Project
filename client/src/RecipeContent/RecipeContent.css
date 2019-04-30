@@ -1,3 +1,10 @@
 li {
     list-style-position: inside;
 }
+
+.app {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+}
+

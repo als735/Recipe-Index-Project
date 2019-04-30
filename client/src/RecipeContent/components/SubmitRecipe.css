@@ -1,0 +1,10 @@
+#submit {
+    margin: 15px; 
+    color: black;
+    background: #e97f6c;
+    border: none;
+    font-weight: bold;
+    position: relative;
+    width: 80px;
+    height: 25px;
+}

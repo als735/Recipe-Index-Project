@@ -2,7 +2,14 @@
     height: 10%;
     width: 100%%;
     color: #0d8ee4;
-    margin: 0;
-    padding: 0;  
+    margin: auto;
+    padding: 10px;  
     background-color: antiquewhite; 
 }
+
+div  {
+    text-align: center; 
+    font-family: Georgia, Times, 'Times New Roman', serif;   
+    font-size: 20pt; 
+}
+

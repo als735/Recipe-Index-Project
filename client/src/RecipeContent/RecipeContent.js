@@ -1,4 +1,5 @@
 import React, {Component} from 'react'; 
+import axios from 'axios';  //http library, it is the engine that is able to utilize http requests// its the instigator or the mover from one ip to another to send and retrieve data  
 import './RecipeContent.css'; 
 import data from '../data.js'; 
 import AddIngredient from './components/AddIngredient'; 
@@ -8,10 +9,11 @@ import DeleteRecipe from './components/DeleteRecipe';
 import FileBox from './components/FileBox'; 
 import Header from './components/Header'; 
 import ArrowButtons from './components/ArrowButtons';
+// import { get } from 'https';
 
 
 class RecipeContent extends Component {
-    constructor(props) {
+    constructor(props) { //whne your accessing props you are accessing a parent from a child 
         super(props); 
     
         this.state = {
@@ -19,7 +21,16 @@ class RecipeContent extends Component {
           title : "",  // empty string for my title 
           ingredients: [],  // empty array for ingredients 
           ingredient: "",  //empty string for each ingredient 
+          recipes: [], 
         }; 
+    }
+
+    componentDidMount(){
+      axios.get('/api/getRecipes').then(res => {
+        this.setState({
+          recipes: res.data, 
+        })
+      }) 
     }
 
     handleTitleChange= (e) => {  //this is to set the title to whatever is in the input 
@@ -36,27 +47,46 @@ class RecipeContent extends Component {
 
     handleIngredientsClick= (e) => { //when the add button is clicked 
       e.preventDefault()
-      let newIngredients = this.state.ingredients.slice();  //copies the ingredients array 
-      let newItem = newIngredients.push(this.state.ingredient) //pushes the new ingredient into newIngredients 
       this.setState({
         ingredients: [...this.state.ingredients,this.state.ingredient] // 
       })
     }
 
+    postDataToServer= (e) => {
+      e.preventDefault()
+      let newRecipe = {
+        title: this.state.title,  //accesses the title and ingredients in prep to send them to the back end 
+        ingredients: [...this.state.ingredients] 
+      }; 
+      axios.post('/api/createRecipe', newRecipe).then(res => { 
+        //I want to send it to this location, I want to send this piece of code/ and then sends the newRecipe to the back end. .then is what will happen after your promise is resolved, or the code ahead of it similar to a CB, so the .then is when you get your response back from the backend. 
+        this.setState({recipes: res.data, ingredients: [], ingredient: "", title: ""})
+          //post the data back to state to my recipes and // then send it down to a child component utilitzing props 
+      }) 
+    }
+
+    showRecipe= (recipe) => {
+      console.log(recipe)
+    }
+
         render(){
-          let list = this.state.ingredients.map((ingredient,i)=> { // 
-            return <li key={i}>{ingredient}</li> // returning each individual li 
-          })
+          // let list = this.state.ingredients.map((ingredient,i)=> { // 
+          //   return <li key={i}>{ingredient}</li> // returning each individual li 
+          // })
+          // let recipeList = this.state.recipes.map((e, i)=> {
+          //   return <li key={i}>{e.title}</li>
+          // })
 console.log(this.state.ingredients)
             return (
               //pulls in each of my components to render them to RecipeContent 
               <div className="App"> 
                 <section> 
                   <Header/>
-                  <SubmitRecipe state={this.state} changeTitle={this.handleTitleChange}/>
-                    <ul>{list}</ul>
+                  <SubmitRecipe state={this.state} changeTitle={this.handleTitleChange} click={this.postDataToServer}/>
+                    {/* <ul>{list}</ul> */}
                   <AddIngredient state={this.state} changeIngredient={this.handleIngredientChange} click={this.handleIngredientsClick}/>
-                  <FileBox/>
+                  <FileBox recipes={this.state.recipes} showRecipe={this.showRecipe}/>
+                  {/* <ul>{recipeList}</ul> */}
                   <ArrowButtons/>
                   <DeleteRecipe/>
                   <AnalyzeRecipe/>
@@ -68,3 +98,4 @@ console.log(this.state.ingredients)
 
     export default RecipeContent;
 
+//when they click on the button on the left in the list we get back an object, 
