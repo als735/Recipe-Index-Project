@@ -1,12 +1,22 @@
 .file-box {
-    height: 60%;
-    width: 10%;
-    color: #0d8ee4;
-    margin: 10px;
+    width: 100%;
+    color: antiquewhite;
+    margin: 0;
     padding: 0;  
-    background-color: antiquewhite; 
+    font-size: 15pt; 
+    background-color: #77b8e4; 
 }
 
 .recipeCardInBox {
     color: rgb(18, 8, 82); 
+}
+
+.fileBoxButtons {
+    color: black;
+    background: rgb(238, 179, 179);
+    border: none;
+    font-weight: bold;
+    position: relative;
+    width: 100%;
+    height: 28px;
 }

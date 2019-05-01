@@ -6,7 +6,7 @@ class AnalyzeRecipe extends Component {
     render(){
         return(
             <div>
-                <button id="analyze">Analyze</button>
+                {/* <button id="analyze">Analyze</button> */}
             </div>
         ) 
     }

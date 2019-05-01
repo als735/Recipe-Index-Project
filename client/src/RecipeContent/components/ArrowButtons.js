@@ -6,8 +6,8 @@ class ArrowButtons extends Component {
     render(){
         return(
             <div>
-            <button id="previous">Previous</button>
-            <button id="next">Next</button>
+            {/* <button id="previous">Previous</button>
+            <button id="next">Next</button> */}
             </div>
         ) 
     }

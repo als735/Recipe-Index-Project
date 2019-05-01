@@ -8,3 +8,22 @@ li {
     justify-content: center; 
 }
 
+#leftNav {
+    float: left; 
+    margin-top: 0;
+    border-right: solid;
+    border-color: #77b8e4; 
+    border-width: 3px; 
+    height: 100vh;
+    padding-top: 0;
+    width: 250px;
+    padding-right: 12px;
+    padding-left: 12px;
+
+}
+
+#mainInputs {
+float: left; 
+margin: 50px; 
+}
+

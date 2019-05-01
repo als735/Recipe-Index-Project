@@ -1,10 +1,29 @@
 #add {
-    margin: 15px; 
+    margin: 0px 0px 15px 0px; 
     color: black;
-    background: #e97f6c;
+    background: #f07660;
     border: none;
     font-weight: bold;
     position: relative;
-    width: 80px;
+    width: 150px;
     height: 25px;
+}
+
+#ingredientBox {
+    width: 50%; 
+
+}
+
+.btn-toolbar .input-group {
+    width: auto;
+}
+.input-group {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    width: 100%;
 }

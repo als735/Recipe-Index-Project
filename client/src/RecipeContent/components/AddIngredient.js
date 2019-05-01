@@ -22,14 +22,16 @@ class AddIngredient extends Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <section id='inputBox'>
+                    <section id='ingredientBox'>
+                    <label>Add Ingredients</label>
+                    <br/>
                      <input 
                         id='item' 
                         type="text" 
                         placeholder='Ingredients' 
                         value={this.props.state.ingredient} 
                         onChange={this.props.changeIngredient}/>
-                        <button id="add" onClick={this.props.click}>Add</button>
+                        <button id="add" onClick={this.props.click}>Add ingredient</button>
                     </section> 
                 </form>
             </div>

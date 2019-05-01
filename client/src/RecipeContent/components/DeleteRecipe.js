@@ -6,7 +6,7 @@ class DeleteRecipe extends Component {
     render(){
         return(
             <div>
-                <button id="delete">Delete</button>
+                {/* <button id="delete">Delete</button> */}
             </div>
         ) 
     }

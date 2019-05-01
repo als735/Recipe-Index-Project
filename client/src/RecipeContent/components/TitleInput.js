@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import './SubmitRecipe.css'; 
+import './TitleInput.css'; 
 
 
-class SubmitRecipe extends Component {
+class TitleInput extends Component {
     // constructor(props){
     //     super(props); 
     // }
@@ -14,21 +14,20 @@ class SubmitRecipe extends Component {
         return (
             <div >
                 <form onSubmit={this.handleSubmit}>
-                    <section id='inputBox'>
-                    <input 
+                    <div id='inputBox'>
+                    <label id="recipeLabel">Recipe Name</label>
+                    <br/>
+                     <input 
                         id='recipeName' 
                         type="text" 
                         placeholder='Name of Recipe' 
                         value={this.props.state.title} 
-                        onChange={this.props.changeTitle} />
-
-                        <button id="submit" onClick={this.props.click}>Submit</button>
-                    </section> 
+                        onChange={this.props.changeTitle}/>                       
+                    </div> 
                 </form>
             </div>
         )
     }
 }
 
-export default SubmitRecipe;
-
+export default TitleInput;
