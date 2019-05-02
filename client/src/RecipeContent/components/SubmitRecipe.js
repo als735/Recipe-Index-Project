@@ -7,9 +7,6 @@ class SubmitRecipe extends Component {
     //     super(props); 
     // }
     render() {
-        
-
-    console.log(this.props) 
 
         return (
             <div >

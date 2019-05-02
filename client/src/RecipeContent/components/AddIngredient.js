@@ -24,8 +24,6 @@ class AddIngredient extends Component {
 //             })
 //             }
 
-    console.log('props:', this.props) 
-
     let list = this.props.state.ingredients.map((ingredient,i)=> { // 
         return <li key={i}>{ingredient}</li> // returning each individual li 
       })

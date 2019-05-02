@@ -7,7 +7,7 @@ class App extends Component {
   componentDidMount(){ //endpoint for test this is how you are reaching back out to the back end, it's a relative path so it uses api and proxy setup. 
     axios.get('/api/test')
       .then((res)=>{
-        console.log(res.data)
+        //console.log(res.data)
       })
   }
 

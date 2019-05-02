@@ -13,7 +13,6 @@ import RecipeCard from './components/RecipeCard';
 
 
 // import { get } from 'https';
-let showRecipeCard = false;
 
 class RecipeContent extends Component {
   
@@ -26,9 +25,10 @@ class RecipeContent extends Component {
           ingredients: [],  // empty array for ingredients 
           ingredient: "",  //empty string for each ingredient 
           recipes: [], 
-          selectedRecipe : {} 
+          selectedRecipe : { }, 
         }; 
     }
+    //spread operator is a modern way of throwing array data inside of another array, it takes what is there and adds to it 
 
     componentDidMount(){
       axios.get('/api/getRecipes').then(res => {
@@ -57,14 +57,14 @@ class RecipeContent extends Component {
       })
     }
 
-getRecipeFromServer= (e) => {
-  console.log('this is id: ', e.id)
-  axios.get('/api/getRecipe/'+e.id).then(res => {
-    console.log('this is res.data: ', res.data)
-    this.setState({selectedRecipe : res.data})
-  })
-  console.log('this is selectedRecipe: ', this.state.seclectedRecipe)
-}
+// getRecipeFromServer= (e) => {
+//   console.log('this is id: ', e.id)
+//   axios.get('/api/getRecipe/'+e.id).then(res => {
+//     console.log('this is res.data: ', res.data)
+//     this.setState({selectedRecipe : res.data})
+//   })
+//   console.log('this is selectedRecipe: ', this.state.seclectedRecipe)
+// }
 
     postDataToServer= (e) => {
       e.preventDefault()
@@ -74,7 +74,7 @@ getRecipeFromServer= (e) => {
       }; 
       axios.post('/api/createRecipe', newRecipe).then(res => { 
         this.setState({recipes: res.data, ingredients: [], ingredient: "", title: ""}); 
-        console.log(res.data)
+        //console.log(res.data)
       }) 
       ///accesses the title and ingredients in prep to send them to the back end
       //I want to send it to this location, I want to send this piece of code/ and then sends the newRecipe to the back end. .then is what will happen after your promise is resolved, or the code ahead of it similar to a CB, so the .then is when you get your response back from the backend. 
@@ -82,19 +82,24 @@ getRecipeFromServer= (e) => {
 
     }
 
-    showRecipe=(clickedRecipe) => {
-      this.getRecipeFromServer(clickedRecipe);
-      showRecipeCard = true;
+    showRecipe=(recipe) => {
+      console.log(recipe)
+      this.setState({
+        selectedRecipe: recipe 
+      })
     }
 
+//if state changes, after you have made your change it will automatically render and everything will reflect the new change. And the values will be updated if they are pulling from state. // 
+
         render(){
+          console.log(this.state.selec)
           // let list = this.state.ingredients.map((ingredient,i)=> { // 
           //   return <li key={i}>{ingredient}</li> // returning each individual li 
           // })
           //  let recipeList = this.state.recipes.map((e, i)=> {
           //   return <li key={i}>{e.ingredient}</li>
           // })
-console.log(this.state.ingredients)
+        //console.log(this.state.ingredients)
             return (
               //pulls in each of my components to render them to RecipeContent 
               // showRecipeCard ? (
@@ -110,9 +115,10 @@ console.log(this.state.ingredients)
                   <SubmitRecipe state={this.state} changeTitle={this.handleTitleChange} click={this.postDataToServer}/>
                   <AddIngredient state={this.state} changeIngredient={this.handleIngredientChange} click={this.handleIngredientsClick}/>
                   </div>
-                  <div>
-                    <RecipeCard/>
-                  </div>
+                  <div> 
+                    <RecipeCard recipe={this.state.selectedRecipe}/> 
+                  </div> 
+                  {/* //recipe in RecipeCard above is the prop, the prop is what you create it to be this is where it is declared, but you are accessing state from this prop*/}
                   <div>
                   <ArrowButtons/>
                   <DeleteRecipe/>

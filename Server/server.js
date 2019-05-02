@@ -26,19 +26,19 @@ app.get('/api/getRecipes', (req, res)=>{
 })
 
 app.get('/api/getRecipe/:id', (req, res)=> {
-    console.log('this is req.body: ', +req.params.id)
-    console.log(newRecipeList[+req.params.id]);
+    //console.log('this is req.body: ', +req.params.id)
+    //console.log(newRecipeList[+req.params.id]);
     res.send(newRecipeList[+req.params.id]);
 }) 
 
 app.post('/api/createRecipe', (req, res, next)=>{
-    console.log(req.body)
+    //console.log(req.body)
     newRecipeList.push({
         id: id,
         title: req.body.title,
         ingredients: req.body.ingredients}) 
     id++  
-    console.log(newRecipeList)
+    //console.log(newRecipeList)
     // recipes.push(req.body)   ..  //push the data into newRecipeList 
     res.send(newRecipeList)          // res.send(recipes)    //send it back using res.send 
  })
@@ -46,5 +46,5 @@ app.post('/api/createRecipe', (req, res, next)=>{
 
 const port = process.env.PORT || 5000; ///distinguishes the port number 
 app.listen(port, ()=>{ // method that passes in the port we ar listening on 
-    console.log(`running on port ${port}`) // accesses the port var to say what port to listen to 
+    //console.log(`running on port ${port}`) // accesses the port var to say what port to listen to 
 })
