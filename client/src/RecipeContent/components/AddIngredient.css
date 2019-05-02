@@ -1,18 +1,14 @@
 #add {
-    margin: 0px 0px 15px 0px; 
+    margin: 5px 0px 15px 0px; 
     color: black;
     background: #f07660;
     border: none;
     font-weight: bold;
     position: relative;
-    width: 150px;
-    height: 25px;
+    padding: 5px; 
+    float: left;
 }
 
-#ingredientBox {
-    width: 50%; 
-
-}
 
 .btn-toolbar .input-group {
     width: auto;

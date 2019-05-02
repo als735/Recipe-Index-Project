@@ -1,16 +1,14 @@
 #submit {
-    margin: 0px 0px 15px 0px; 
+    margin: 5px 0px 15px 0px; 
     color: black;
     background: #f07660;
     border: none;
     font-weight: bold;
     position: relative;
-    width: 150px;
-    height: 25px;
-}
-
-#inputBox {
-    width: 50%; 
+    padding: 5px; 
+    float:left; 
 
 }
+
+
 

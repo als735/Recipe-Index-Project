@@ -21,8 +21,8 @@ class SubmitRecipe extends Component {
                         placeholder='Name of Recipe' 
                         value={this.props.state.title} 
                         onChange={this.props.changeTitle} />
-
-                        <button id="submit" onClick={this.props.click}>Submit</button>
+                        <br/>
+                        <button id="submit" onClick={this.props.click}>Submit Card</button>
                     </section> 
                 </form>
             </div>
