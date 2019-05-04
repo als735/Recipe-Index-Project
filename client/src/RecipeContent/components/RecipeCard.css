@@ -1,6 +1,5 @@
 #recipe-card {
-    width: 300px; 
-    border-right: 4px solid #0d8ee4;
+    width: 330px; 
     float: left; 
     text-align: left; 
     padding: 3px; 
@@ -8,11 +7,13 @@
 }
 
 #nutrition-card {
-    width: 300px; 
+    width: 330px; 
     float: left; 
     text-align: left; 
     padding: 3px; 
     font-weight: bold; 
+    border-left: 4px solid #0d8ee4; 
+
 }
 
 .border {

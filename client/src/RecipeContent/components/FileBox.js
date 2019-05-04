@@ -1,6 +1,5 @@
 import React, {Component} from "react"; 
 import './FileBox.css'; 
-import RecipeContent from "../RecipeContent";
 
 
 class FileBox extends Component {

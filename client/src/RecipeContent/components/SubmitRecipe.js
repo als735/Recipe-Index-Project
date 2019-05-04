@@ -3,9 +3,7 @@ import './SubmitRecipe.css';
 
 
 class SubmitRecipe extends Component {
-    // constructor(props){
-    //     super(props); 
-    // }
+   
     render() {
 
         return (

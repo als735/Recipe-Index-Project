@@ -14,15 +14,6 @@ class AddIngredient extends Component {
           }; 
     }
     render() {
-        
-// AddRecipe =(recipe) => {
-//     Axios.post('/api/recipe', recipe)
-//     .then((res)=>{
-//     this.setState({
-//     Recipe_list:res.data
-//             })
-//             })
-//             }
 
     let list = this.props.state.ingredients.map((ingredient,i)=> { // 
         return <li key={i}>{ingredient}</li> // returning each individual li 
